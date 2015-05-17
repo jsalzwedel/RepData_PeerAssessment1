@@ -71,10 +71,12 @@ img {
 <p>In this analysis, we’re going to explore the motion of a person wearing an activity monitoring device. This device collects data at 5 minute intervals through out the day. The data consists of two months of data from an anonymous individual collected during the months of October and November, 2012 and include the number of steps taken in 5 minute intervals each day.</p>
 <div id="loading-and-preprocessing-the-data" class="section level2">
 <h2>Loading and preprocessing the data</h2>
-<p>Data tables (from the data.table package) are easy to look at, so we’ll read the data into one of those. Note: this workflow assumes that the activity data has already been extracted from the zip.</p>
+<p>Data tables (from the data.table package) are easy to look at, so we’ll read the data into one of those.</p>
 <pre class="r"><code>library(data.table)
-unzip(&quot;activity.zip&quot;,overwrite=FALSE)
-data &lt;- fread(&quot;activity.csv&quot;)</code></pre>
+unzip(&quot;activity.zip&quot;,overwrite=FALSE)</code></pre>
+<pre><code>## Warning in unzip(&quot;activity.zip&quot;, overwrite = FALSE): not overwriting file
+## './activity.csv</code></pre>
+<pre class="r"><code>data &lt;- fread(&quot;activity.csv&quot;)</code></pre>
 <p>We’ll make the data easier to read and manipulate by setting nicer column names and changing the dates from character vectors into Date objects.</p>
 <pre class="r"><code>setnames(data, colnames(data), c(&quot;Steps&quot;,&quot;Date&quot;,&quot;Interval&quot;))
 data$Date &lt;- as.Date(data$Date)</code></pre>
