@@ -44,7 +44,7 @@ days <-aggregate(list(TotalSteps = data$Steps),
 
 Now let's make a histogram of the total steps per day
 
-```{r echo=TRUE}
+```{r}
 library(ggplot2)
 qplot(TotalSteps, data = days,ylab="counts (Days)", xlab="Total Steps", 
       main="Total Steps Each Day", color=I("blue"))
