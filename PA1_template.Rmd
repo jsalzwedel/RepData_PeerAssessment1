@@ -16,11 +16,11 @@ the number of steps taken in 5 minute intervals each day.
 ## Loading and preprocessing the data
 
 Data tables (from the data.table package) are easy to look at, so we'll read the
-data into one of those.  Note: this workflow assumes that the activity data has
-already been extracted from the zip.
+data into one of those.
 
 ```{r}
 library(data.table)
+unzip("activity.zip",overwrite=FALSE)
 data <- fread("activity.csv")
 ```
 
